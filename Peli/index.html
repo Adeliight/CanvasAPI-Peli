@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>CanvasAPI-Peli</title>
+</head>
+
+<body onload="setupCanvas();">
+<div class="game-container">
+    <div id="startingScreen" class="overlay active">
+        <h1>TASOHYPPELY</h1>
+        <button id="start" onclick="showLevels()">Pelaamaan!</button>
+    </div>
+
+    <div id="levelScreen" class="overlay">
+        <h2>Valitse taso</h2>
+        <div class="level-buttons">
+            <button onclick="startGame(1)">1</button>
+            <button onclick="startGame(2)">2</button>
+            <button onclick="startGame(3)">3</button>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+</div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
