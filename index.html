@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="css/styles.css">
   <title>CanvasAPI-Peli</title>
 </head>
+<body> 
 
-<body onload="setupCanvas();">
 <div class="game-container">
     <div id="startingScreen" class="overlay active">
         <h1>TASOHYPPELY</h1>
-        <button id="start" onclick="showLevels()">Pelaamaan!</button>
+        <button id="start">Pelaamaan!</button> 
     </div>
 
     <div id="levelScreen" class="overlay">
@@ -24,9 +24,12 @@
         </div>
     </div>
 
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" style="display:none;"></canvas>
 </div>
-  <script src="js/script.js"></script>
+
+<script src="js/pelaajanOhjaus.js"></script>
+<script src="js/level1.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

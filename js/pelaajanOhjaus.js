@@ -1,16 +1,30 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+//const canvas = document.getElementById('gameCanvas');
+//const ctx = canvas.getContext('2d');
 
-let x = 50;
-let y = 50;
+// let x = 50;
+// let y = 50;
 
-const pLeveys = 30
-const pPituus = 30
+// const pLeveys = 30
+// const pPituus = 30
 
-const paino = 4
-let maassa = false
+// const paino = 4
+// let maassa = false
 
-const nopeus = 5;
+// const nopeus = 5;
+
+    // Muutettu jotta olisi yhteensopiva muun koodin kanssa -Roni
+
+const player = {
+    x: 50,
+    y: 50,
+    pLeveys: 30,
+    pPituus: 30,
+    paino: 4,
+    maassa: false,
+    nopeus: 5,
+    hyppays: false,
+    korkeusTarkastus: 0
+};
 
 hyppataan = false
 oikealle = false
@@ -19,11 +33,13 @@ vasemmalle = false
 let hyppays = false
 let korkeusTarkastus = 0
 
-function drawPlayer() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);  
-    ctx.fillStyle = 'rgb(90, 178, 230)';
-    ctx.fillRect(x, y, pLeveys, pLeveys);  
-}
+// Siirretty js/script.js
+
+//function drawPlayer() {
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);  
+    //ctx.fillStyle = 'rgb(90, 178, 230)';
+    //ctx.fillRect(x, y, pLeveys, pLeveys);  
+//}
 
 document.addEventListener('keydown', liikutaPelaajaa);
 document.addEventListener("keyup",lopetaLiikutus)
@@ -59,37 +75,37 @@ switch(e.key) {
 
 //uusi liikkumis ohjaus
 function liikutus(){
-    if (hyppataan === true&&maassa===true||hyppays === true){
-        y -= nopeus
-        korkeusTarkastus += 1
-        hyppays = true
-        if (korkeusTarkastus === 15){
+    if (hyppataan === true&&player.maassa===true||player.hyppays === true){
+        player.y -= nopeus 
+        player.korkeusTarkastus += 1
+        player.hyppays = true
+        if (player.korkeusTarkastus === 15){
             hyppataan = false
-            hyppays = false
-            korkeusTarkastus = 0
+            player.hyppays = false
+            player.korkeusTarkastus = 0
         }
     }
-    if (oikealle === true)
-        x += nopeus
-    if (vasemmalle === true)
-        x -= nopeus
+    if (oikealle === true) 
+        player.x += player.nopeus;
+    if (vasemmalle === true) 
+        player.x -= player.nopeus;
 }
 
 
 //piirtää peli alueen
-function piirräMaa(){
-    ctx.fillStyle = "black"
-    ctx.lineWidth = 4
-    ctx.beginPath()
-    ctx.moveTo(0,400)
-    ctx.lineTo(800,400)
-    ctx.stroke()
-}
+//function piirräMaa(){
+    //ctx.fillStyle = "black"
+    //ctx.lineWidth = 4
+    //ctx.beginPath()
+    //ctx.moveTo(0,400)
+    //ctx.lineTo(800,400)
+    //ctx.stroke()
+//}
 
 //asettaa putoamis nopeuden kun on ilmassa
 function painovoima(){
-    if (maassa === false && hyppays === false){
-        y += paino
+    if (player.maassa === false && player.hyppays === false){
+        player.y += player.paino;
     }
 }
 
@@ -102,11 +118,10 @@ function checkCollision() {
     }
 }
 
-setInterval(function() {
-    checkCollision()
-    liikutus()
-    painovoima()
-    drawPlayer();
-    piirräMaa()
-}, 20);
-
+//setInterval(function() {
+    //checkCollision()
+    //liikutus()
+    //painovoima()
+    //drawPlayer();
+    //piirräMaa()
+//}, 20);
