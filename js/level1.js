@@ -6,16 +6,30 @@ const levelData = {
 
 let currentPlatforms = [];
 
+//collison koodi uusittu toimimaan kaikissa tapauksissa (toivottavasti)
 function tarkistaTormaykset() {
     let onkoTasonPaalla = false;
     currentPlatforms.forEach(plat => {
         if (player.x < plat.x + plat.width &&
-            player.x + player.width > plat.x &&
-            player.y + player.height <= plat.y + 10 && 
-            player.y + player.height + paino >= plat.y) {
-            player.y = plat.y - player.height;
-            onkoTasonPaalla = true;
+            player.x + player.pLeveys > plat.x &&
+            player.y + player.pPituus >= plat.y && 
+            player.y <= plat.y + plat.height) {
+            
+                if(player.x < plat.x && player.y > plat.y && player.y <plat.y+plat.height){
+                    player.x = plat.x -player.pLeveys
+
+                } else if(player.x + player.pLeveys > plat.x + plat.width && player.y > plat.y && player.y <plat.y+plat.height){
+                    player.x = plat.x + plat.width
+
+                } else if(player.y+player.pPituus< plat.y+plat.height){
+                    onkoTasonPaalla = true;
+                    player.y = plat.y - player.pPituus 
+
+                }else{
+                    player.hyppays = false
+                }
+            }
         }
-    });
+    );
     player.maassa = onkoTasonPaalla;
 }
