@@ -39,13 +39,12 @@ function draw() {
         peliCtx.fillRect(plat.x, plat.y, plat.width, plat.height);
     });
     peliCtx.fillStyle = 'rgb(90, 178, 230)';
-    peliCtx.fillRect(player.x, player.y, player.width, player.height);
+    peliCtx.fillRect(player.x, player.y, player.pLeveys, player.pPituus);
 }
 
 function gameLoop() {
     liikutus();
     painovoima();
-    
     tarkistaTormaykset();
     draw(); 
     requestAnimationFrame(gameLoop);
