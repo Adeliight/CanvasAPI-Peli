@@ -79,5 +79,3 @@ function painovoima(){
         player.y += player.paino;
     }
 }
-
-
