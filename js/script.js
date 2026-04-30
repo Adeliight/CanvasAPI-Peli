@@ -90,6 +90,8 @@ function nollaaPelaaja() {
     
     player.hyppays = false;
     player.maassa = false;
+    oikealle = false
+    vasemmalle = false
 }
 
 function gameLoop() {
