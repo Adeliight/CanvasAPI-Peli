@@ -11,7 +11,7 @@ Platformer tyyppinen peli, yksittäinen level näkyy kokonaan sivulla.
 Collission check erilliseen tiedostoon
 
 ## Raportti
-###Juho
+### Juho
 Tekemät osuudet:
 Pelaajan hallitsemisen koodi
 Collissionin tarkastus koodin
