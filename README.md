@@ -12,7 +12,7 @@ Collission check erilliseen tiedostoon
 
 ## Raportti
 ### Juho
-Tekemät osuudet:
-Pelaajan hallitsemisen koodi
-Collissionin tarkastus koodin
+Tekemät osuudet:__
+Pelaajan hallitsemisen koodi__
+Collissionin tarkastus koodin__
 Bugikorjauksia
