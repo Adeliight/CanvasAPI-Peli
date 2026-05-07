@@ -16,3 +16,8 @@ Tekemät osuudet: <br />
 Pelaajan hallitsemisen koodi <br />
 Collissionin tarkastus koodin <br />
 Bugikorjauksia
+
+### Roni
+Tekemät osuudet: <br />
+Levelien rakennus <br />
+Käyttöliittymmä <br />
